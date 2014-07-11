@@ -1,6 +1,6 @@
 // alert("working");
 
-var currently_test = "none";
+var current = "none";
 
 window.onload = function(event){
 	var one = document.getElementById("div_1");
@@ -13,12 +13,16 @@ window.onload = function(event){
 
 //	current.style.backgroundColor = "beige";
 
+	prev.onclick = function(event) {
+		
+	}
+
 	one.onclick = function(event) {
 		// alert(one.innerHTML);
 //		prev.innerHTML = current.innerHTML;
 //		current.innerHTML = one.innerHTML;
-		prev.innerHTML = currently_test;
-		currently_test = one.innerHTML;
+		prev.innerHTML = current;
+		current = one.innerHTML;
 		one.style.backgroundColor = "teal";
 		one.style.color = "white";
 		one.style.fontStyle = "italic";
@@ -27,8 +31,8 @@ window.onload = function(event){
 		// alert(two.innerHTML);
 		// prev.innerHTML = current.innerHTML;
 		// current.innerHTML = two.innerHTML;
-		prev.innerHTML = currently_test;
-		currently_test = two.innerHTML;		
+		prev.innerHTML = current;
+		current = two.innerHTML;		
 		two.style.backgroundColor = "teal";
 		two.style.color = "white";
 		two.style.fontStyle = "italic";
@@ -37,8 +41,8 @@ window.onload = function(event){
 		// alert(three.innerHTML);
 		// prev.innerHTML = current.innerHTML;
 		// current.innerHTML = three.innerHTML;
-		prev.innerHTML = currently_test;
-		currently_test = three.innerHTML;		
+		prev.innerHTML = current;
+		current = three.innerHTML;		
 		three.style.backgroundColor = "teal";
 		three.style.color = "white";
 		three.style.fontStyle = "italic";
@@ -48,8 +52,8 @@ window.onload = function(event){
 		// alert(four.innerHTML);
 		// prev.innerHTML = current.innerHTML;
 		// current.innerHTML = four.innerHTML;
-		prev.innerHTML = currently_test;
-		currently_test = four.innerHTML;		
+		prev.innerHTML = current;
+		current = four.innerHTML;		
 		four.style.backgroundColor = "teal";
 		four.style.color = "white";
 		four.style.fontStyle = "italic";
@@ -58,8 +62,8 @@ window.onload = function(event){
 		// alert(five.innerHTML);
 		// prev.innerHTML = current.innerHTML;
 		// current.innerHTML = five.innerHTML;
-		prev.innerHTML = currently_test;
-		currently_test = three.innerHTML;		
+		prev.innerHTML = current;
+		current = three.innerHTML;		
 		five.style.backgroundColor = "teal";
 		five.style.color = "white";
 		five.style.fontStyle = "italic";

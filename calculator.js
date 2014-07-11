@@ -21,7 +21,19 @@ window.onload = function() {
 
 	// when an operator is punched, the display is cleared
 	// and that information is stored for future stuff
-	var plus = document.getElementById("plus");
+	var addOp = document.getElementById("plus");
+
+	var firstOperand = true, operand1 = '', operand2 = '', operation, result;
+
+	addOp.onclick = function() {
+		operation = '+';
+		firstOperand = false;
+		resultDisp.innerHTML = '';
+		opDisp.innerHTML = addOp.innerHTML;
+
+	}
+
+
 
 
 	one.onclick = function(event) {
@@ -70,8 +82,6 @@ window.onload = function() {
 	// }
 
 
-
-	while ()
 
 
 
