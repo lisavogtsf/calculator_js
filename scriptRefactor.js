@@ -21,84 +21,64 @@ window.onload = function() {
   var addOp = document.getElementById("op_plus"),
       subOp = document.getElementById("op_sub"),
       multOp = document.getElementById("op_mult"),
-      divOp = document.getElementById("op_mult"),
+      divOp = document.getElementById("op_div"),
       entOp = document.getElementById("op_ent"),
       clrOp = document.getElementById("op_clr");
 
   // state
-  var firstOperand = true, operand1 = '', operand2 = '', operation;
+  var hiddenOperand;
   
   // event handlers
   numOne.onclick = function() {
-    if (firstOperand) {
-      operand1 += numOne.innerHTML;
-    } else {
-      operand2 += numOne.innerHTML; 
-    }
-    display.innerHTML += numOne.innerHTML;
+    display.innerHTML += '1';
   };
   numTwo.onclick = function() {
-    if (firstOperand) {
-      operand1 += numTwo.innerHTML;
-    } else {
-      operand2 += numTwo.innerHTML; 
-    }
-    display.innerHTML += numTwo.innerHTML;
+    display.innerHTML += '2';
   };
   numThree.onclick = function() {
-    if (firstOperand) {
-      operand1 += numThree.innerHTML;
-    } else {
-      operand2 += numThree.innerHTML; 
-    }
-    display.innerHTML += numThree.innerHTML;
+    display.innerHTML += '3';
   };
 
   addOp.onclick = function() {
-    operation = '+';
-    firstOperand = false;
+    hiddenOperand = display.innerHTML;
     display.innerHTML = '';
-    operator.innerHTML = addOp.innerHTML;
+    operator.innerHTML = '+';
   };
   subOp.onclick = function() {
-    operation = '-';
-    firstOperand = false;
+    hiddenOperand = display.innerHTML;
     display.innerHTML = '';
-    operator.innerHTML = subOp.innerHTML;
+    operator.innerHTML = '-';
   };
   multOp.onclick = function() {
-    operation = '*'; 
-    firstOperand = false;
+    hiddenOperand = display.innerHTML;
     display.innerHTML = '';
-    operator.innerHTML = multOp.innerHTML;
+    operator.innerHTML = '*';
   };
-  clrOp.onclick = function() {
-    firstOperand = true;
-    operand1 = '';
-    operand2 = '';
+  divOp.onclick = function() {
+    hiddenOperand = display.innerHTML;
     display.innerHTML = '';
-    operator.innerHTML = '';
-    operation = undefined;
+    operator.innerHTML = '/';
   };
   entOp.onclick = function() {
-    var result = parseInt(operand1);
+    var result = parseInt(hiddenOperand);
     if (operator.innerHTML === '+') {
-      result += parseInt(operand2);
+      result += parseInt(display.innerHTML);
     } else if (operator.innerHTML === '-') {
-      result -= parseInt(operand2);
+      result -= parseInt(display.innerHTML);
     } else if (operator.innerHTML === '*') {
-      result *= parseInt(operand2);
+      result *= parseInt(display.innerHTML);
     } else if (operator.innerHTML === '/') {
-      result /= parseInt(operand2);
-    } else if (operand2 == '') {
-      result = operand1;
+      result /= parseInt(display.innerHTML);
     } else {
-      result = operand1;
+      result = display.innerHTML;
     }
-    console.log(result);
     display.innerHTML = result;
   };
-
+  clrOp.onclick = function() {
+    hiddenOperand = undefined;
+    display.innerHTML = '';
+    operator.innerHTML = '';
+  };
   
 };
     
