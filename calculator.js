@@ -10,7 +10,18 @@ window.onload = function() {
 	var eight = document.getElementById("eightButton");
 	var nine = document.getElementById("nineButton");			
 	var zero = document.getElementById("zeroButton");
+
+	// when numbers are clicked, the show up here
+	// when enter is clicked these numbers are stored 
 	var opDisp = document.getElementById("operator_display");
+
+	//results appears after you hit enter
+	var resultDisp = document.getElementById("result_display_value");
+	var enter = document.getElementById("ent");
+
+	// when an operator is punched, the display is cleared
+	// and that information is stored for future stuff
+	var plus = document.getElementById("plus");
 
 
 	one.onclick = function(event) {
@@ -60,7 +71,7 @@ window.onload = function() {
 
 
 
-
+	while ()
 
 
 
